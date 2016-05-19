@@ -3,6 +3,8 @@ This program converts Bovada poker hand histories to PokerStars format.  It will
 
 *All hole cards are shown (optional) in HM2's latest version*
 
+View the [Updates](#Updates) section to see details of any changes/bug fixes.  You can update to the latest version by re-downloading all of the files in this repository and replacing the old files with the new ones.
+
 **This converter is beta software and has not been tested extensively (use it at your own risk).  It has only been tested with NLHE and PLO cash game hands.  It is recommended that you backup your original hand history files (and keep them in a safe place) before using this converter.  It is also recommended that you backup your databases before using this converter.**
 
 A large portion of the code in this project is modified code (mostly unused code was removed) from the <a href="http://fpdb.wikidot.com/" target="_blank">FPDB</a> project (<a href="https://github.com/ChazDazzle/fpdb-chaz" target="_blank">GitHub page 1</a>, <a href="https://github.com/philroberts/FPDB-for-OSX" target="_blank">GitHub page 2</a>)
@@ -98,3 +100,5 @@ Complete the following steps in order.  If you have already set up <a href="http
 ## Misc
 #### Packaging converter into a single executable file (Windows and Mac)
 * This can be done using <a href="http://www.pyinstaller.org/" target="_blank">PyInstaller</a> or similar software
+
+# Updates <a name="Updates"></a>
