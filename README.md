@@ -101,4 +101,4 @@ Complete the following steps in order.  If you have already set up <a href="http
 #### Packaging converter into a single executable file (Windows and Mac)
 * This can be done using <a href="http://www.pyinstaller.org/" target="_blank">PyInstaller</a> or similar software
 
-# Updates <a name="Updates"></a>
+## Updates <a name="Updates"></a>
