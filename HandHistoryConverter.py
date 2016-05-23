@@ -191,7 +191,7 @@ class HandHistoryConverter():
         if HandHistoryConverter.re_tzOffset.match(givenTimezone):
             offset = int(givenTimezone[-5:])
             givenTimezone = givenTimezone[0:-5]
-        else: offset=0
+        else: offset=400
 
         if givenTimezone in ("ET", "EST", "EDT"):
             givenTZ = timezone('US/Eastern')
