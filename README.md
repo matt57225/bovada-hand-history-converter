@@ -30,7 +30,7 @@ Complete the following steps in order.  If you have already set up <a href="http
   * install via <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">Command Prompt</a> with the following command:
     * ```easy_install --upgrade pytz```
 4. Download and run the converter
-  * scroll to the top of this webpage and download the converter (click on ```"Download ZIP"```)
+  * scroll to the top of this webpage and download the converter (click on ```"Clone or download"``` then click ```"Download ZIP"```)
   * extract the folder within the zip you downloaded to a new folder on your computer
   * open a Command Prompt window to that folder and run the following command:
     * ```python app.py```
@@ -61,7 +61,7 @@ Complete the following steps in order.  If you have already set up <a href="http
   * if this is not working see [Troubleshooting](#Troubleshooting) step 2
 4. Download and run the converter
   * scroll to the top of this webpage
-  * click on ```"Download ZIP"```
+  * click on ```"Clone or download"``` then click ```"Download ZIP"```
   * extract the folder (this folder can be renamed) within the zip you downloaded to a new folder on your computer
   * open a Command Prompt window to that folder (hold shift and right click in/on that folder and then click on ```"Open command window here"```)
   * type ```python app.py```
