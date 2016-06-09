@@ -17,7 +17,8 @@ If you find this program useful and would like to make a donation click on one o
 
 <a href="https://www.coinbase.com/matt57225" target="_blank">BitCoin</a>
 
-## Windows <a name="Windows"></a>
+<a id="Windows"></a>
+## Windows
 Complete the following steps in order.  If you have already set up <a href="https://github.com/matt57225/betonline-hand-history-converter" target="_blank">BetOnline Hand History Converter</a> or <a href="https://github.com/matt57225/betonline-live-hand-history-converter" target="_blank">BetOnline Live Hand History Converter</a>, you can skip to step 4
 
 ####*Short Version*
@@ -82,7 +83,8 @@ Complete the following steps in order.  If you have already set up <a href="http
   * press Enter key
   * if a version is shown then Python is installed
 
-## Troubleshooting <a name="Troubleshooting"></a>
+<a id="Troubleshooting"></a>
+## Troubleshooting
 1. Try installing Python and PyQt4 with default settings (do not do minimal installs)
 2. If you did not ```"Add python.exe to Path"``` from step 1 in the [Windows](#Windows) section you can do it manually by editing the ```"PATH"``` or ```"Path"``` user or system environment variable to include both of the following paths:
 
