@@ -1,5 +1,5 @@
-# Bovada Hand History Converter
-This program converts Bovada poker hand histories to PokerStars format.  It will not convert hand histories as you play.
+# Bovada/Ignition Hand History Converter
+This program converts Bovada/Ignition poker hand histories to PokerStars format.  It will not convert hand histories as you play.
 
 *All hole cards are shown (optional) in HM2's latest version*
 
