@@ -85,8 +85,9 @@ Complete the following steps in order.  If you have already set up <a href="http
 
 <a id="Troubleshooting"></a>
 ## Troubleshooting
-1. Try installing Python and PyQt4 with default settings (do not do minimal installs)
-2. If you did not ```"Add python.exe to Path"``` from step 1 in the [Windows](#Windows) section you can do it manually by editing the ```"PATH"``` or ```"Path"``` user or system environment variable to include both of the following paths:
+1. Try using 32-bit version of PyQt4 instead of 64-bit version.
+2. Try installing Python and PyQt4 with default settings (do not do minimal installs)
+3. If you did not ```"Add python.exe to Path"``` from step 1 in the [Windows](#Windows) section you can do it manually by editing the ```"PATH"``` or ```"Path"``` user or system environment variable to include both of the following paths:
 
   C:\Python27\
 
