@@ -50,7 +50,7 @@ Complete the following steps in order.  If you have already set up <a href="http
     * type ```python --version```
     * press Enter key
     * if a version is shown then Python is installed
-    * **if this is not working you might need to sign out of your Windows user account and sign back in or restart the computer and if it's still not working after that see [Troubleshooting](#Troubleshooting) step 2**
+    * **if this is not working you might need to sign out of your Windows user account and sign back in or restart the computer and if it's still not working after that see [Troubleshooting](#Troubleshooting) step 3**
 2. Install <a href="https://www.riverbankcomputing.com/software/pyqt/download" target="_blank">PyQt4</a> (direct download links - <a href="http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x32.exe" target="_blank">32-bit</a>, <a href="http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x64.exe" target="_blank">64-bit</a>)
   * only the Qt runtime needs to be installed
   * on the ```"Choose Components"``` screen (installer's 3rd screen) uncheck all checkboxes except Qt runtime (or choose ```"Minimal"``` from the drop-down menu)
@@ -59,7 +59,7 @@ Complete the following steps in order.  If you have already set up <a href="http
   * type ```easy_install --upgrade pytz```
   * press Enter key
   * wait for installation to complete
-  * if this is not working see [Troubleshooting](#Troubleshooting) step 2
+  * if this is not working see [Troubleshooting](#Troubleshooting) step 3
 4. Download and run the converter
   * scroll to the top of this webpage
   * click on ```"Clone or download"``` then click ```"Download ZIP"```
