@@ -104,6 +104,7 @@ class Worker(QtCore.QThread):
 
             fileIn.close()
 
+            hhStr = hhStr.replace('Bodog.eu Hand #', '\n\nBodog.eu Hand #')
             hhStr = hhStr.replace('Bovada Hand #', '\n\nBovada Hand #')
             hhStr = hhStr.replace('Ignition Hand #', '\n\nIgnition Hand #')
             hhStr += '\n\n'
