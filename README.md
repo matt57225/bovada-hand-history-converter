@@ -94,11 +94,11 @@ Complete the following steps in order.  If you have already set up <a href="http
   C:\Python27\Scripts
 
   Test if its working by doing the following:
-    * open a Command Prompt window
-    * type ```python --version```
-    * press Enter key
-    * if a version is shown then it worked
-    * **You might need to sign out of your Windows user account and sign back in or restart the computer after doing this for it to work**
+   * open a Command Prompt window
+   * type ```python --version```
+   * press Enter key
+   * if a version is shown then it worked
+   * **You might need to sign out of your Windows user account and sign back in or restart the computer after doing this for it to work**
 
 ## Misc
 #### Packaging converter into a single executable file (Windows and Mac)
