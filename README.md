@@ -21,7 +21,7 @@ If you find this program useful and would like to make a donation click on one o
 ## Windows
 Complete the following steps in order.  If you have already set up <a href="https://github.com/matt57225/betonline-hand-history-converter" target="_blank">BetOnline Hand History Converter</a> or <a href="https://github.com/matt57225/betonline-live-hand-history-converter" target="_blank">BetOnline Live Hand History Converter</a>, you can skip to step 4
 
-####*Short Version*
+#### *Short Version*
 1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  2.7.x (install the latest 2.7.x which is probably 2.7.11)
   * **DO NOT INSTALL PYTHON 3.5.x, the converter will not work with this version**
   * enable/install ```"Add python.exe to Path"``` and ```"pip"```, no other optional features need to be installed
@@ -38,7 +38,7 @@ Complete the following steps in order.  If you have already set up <a href="http
   * the program might load slowly the first time but each time after that it should load quickly
   * **you probably will want to make a shortcut to run the converter (see details below)**
 
-####*Detailed Version*
+#### *Detailed Version*
 1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  2.7.x (install the latest 2.7.x which is probably 2.7.11)
   * **DO NOT INSTALL PYTHON 3.5.x, the converter will not work with this version**
   * on the ```"Customize Python 2.7.x"``` screen (installer's 3rd screen) enable ```"Add python.exe to Path"``` by clicking on it's icon and selecting ```"Will be installed on local hard drive"```
