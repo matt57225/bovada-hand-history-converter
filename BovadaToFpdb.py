@@ -378,14 +378,36 @@ class Bovada(HandHistoryConverter):
             hand.streets[firststreet] = hand.handText
         if hand.gametype['base'] == "hold":
             m1 = self.re_Board.search(hand.handText)
-            for street in ('FLOP', 'TURN', 'RIVER'):
+            if m1:
+                for street in ('FLOP', 'TURN', 'RIVER'):
+                    if m1 and m1.group(street) and not hand.streets.get(street):
+                        hand.streets[street] = m1.group(street)
+            else:
+                street = 'FLOP'
+                m1 = re.search(r"\*\*\* FLOP \*\*\* \[(?P<FLOP>\S\S\S? \S\S\S? \S\S\S?)\]", hand.handText)
                 if m1 and m1.group(street) and not hand.streets.get(street):
                     hand.streets[street] = m1.group(street)
-
+                
+                street = 'TURN'
+                m1 = re.search(r"\*\*\* TURN \*\*\* \[.+\] \[(?P<TURN>\S\S\S?)\]", hand.handText)
+                if m1 and m1.group(street) and not hand.streets.get(street):
+                    hand.streets[street] = m1.group(street)
+                
+                street = 'RIVER'
+                m1 = re.search(r"\*\*\* RIVER \*\*\* \[.+\] \[(?P<RIVER>\S\S\S?)\]", hand.handText)
+                if m1 and m1.group(street) and not hand.streets.get(street):
+                    hand.streets[street] = m1.group(street)
 
     def readCommunityCards(self, hand, street): # street has been matched by markStreets, so exists in this hand
         if street in ('FLOP','TURN','RIVER'):   # a list of streets which get dealt community cards (i.e. all but PREFLOP)
             m = self.re_Board.search(hand.handText)
+            if not m:
+                if street == 'FLOP':
+                    m = re.search(r"\*\*\* FLOP \*\*\* \[(?P<FLOP>\S\S\S? \S\S\S? \S\S\S?)\]", hand.handText)
+                elif street == 'TURN':
+                    m = re.search(r"\*\*\* TURN \*\*\* \[.+\] \[(?P<TURN>\S\S\S?)\]", hand.handText)
+                elif street == 'RIVER':
+                    m = re.search(r"\*\*\* RIVER \*\*\* \[.+\] \[(?P<RIVER>\S\S\S?)\]", hand.handText)
             if m and m.group(street):
                 cards = m.group(street).split(' ')
                 hand.setCommunityCards(street, cards)
