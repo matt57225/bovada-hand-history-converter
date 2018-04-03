@@ -89,7 +89,7 @@ Complete the following steps in order.
 
 ## Updates <a name="Updates"></a>
 **4/3/2018**
-- update for Python3
+- update for Python 3
 
 **8/15/2016**
 - fix for Ignition hands
