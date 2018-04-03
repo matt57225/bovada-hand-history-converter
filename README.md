@@ -22,7 +22,7 @@ If you find this program useful and would like to make a donation click on one o
 Complete the following steps in order.
 
 #### *Short Version*
-1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.5.x (install the latest 3.5.x)
+1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.6.x (install the latest 3.6.x)
   * enable/install ```"Add Python 3.6 to PATH"``` (from the first screen) and ```"pip"``` (from the "Customize installation" screen), no other features need to be installed
 2. Install <a href="https://www.riverbankcomputing.com/software/pyqt/download5" target="_blank">PyQt5</a>
   * install via <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">Command Prompt</a> with the following command:
@@ -39,7 +39,7 @@ Complete the following steps in order.
   * **you probably will want to make a shortcut to run the converter (see details below)**
 
 #### *Detailed Version*
-1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.5.x (install the latest 3.5.x)
+1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.6.x (install the latest 3.6.x)
   * on the installer's first screen check/enable ```"Add Python 3.6 to PATH"```
   * (optional) on the same screen you can click ```"Customize installation"``` and uncheck all features except for ```"pip"``` (pip is required for step 2)
   * click "Next" button until you see an "Install" button and then click the "Install" button (you do not need to check any more boxes)
@@ -81,7 +81,7 @@ Complete the following steps in order.
   * type ```python --version```
   * press Enter key
   * if a version is shown then Python is installed
-  * **make sure you are using Python 3.5.x (other versions may not work)
+  * **make sure you are using Python 3.6.x (other versions may not work)
 
 ## Misc
 #### Packaging converter into a single executable file (Windows and Mac)
