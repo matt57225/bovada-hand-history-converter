@@ -49,7 +49,7 @@ Complete the following steps in order.
     * type ```python --version```
     * press Enter key
     * if a version is shown then Python is installed
-    * **if this is not working you might need to sign out of your Windows user account and sign back in or restart the computer
+    * if this is not working you might need to sign out of your Windows user account and sign back in or restart the computer
 2. Install <a href="https://www.riverbankcomputing.com/software/pyqt/download5" target="_blank">PyQt5</a>
   * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window
   * type ```pip3 install PyQt5```
