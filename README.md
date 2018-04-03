@@ -52,12 +52,12 @@ Complete the following steps in order.
     * **if this is not working you might need to sign out of your Windows user account and sign back in or restart the computer
 2. Install <a href="https://www.riverbankcomputing.com/software/pyqt/download5" target="_blank">PyQt5</a>
   * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window
-  * type ```easy_install --upgrade pytz```
+  * type ```pip3 install PyQt5```
   * press Enter key
   * wait for installation to complete
 3. Install <a href="https://pypi.python.org/pypi/pytz" target="_blank">pytz</a>
   * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window
-  * type ```pip3 install PyQt5```
+  * type ```easy_install --upgrade pytz```
   * press Enter key
   * wait for installation to complete
 4. Download and run the converter
