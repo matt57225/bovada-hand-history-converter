@@ -49,8 +49,8 @@ games = {              # base, category
           '5_omahahi' : ('hold','omaha','h', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,5)]),
           '6_omahahi' : ('hold','omaha','h', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,6)]),
            '5_omaha8' : ('hold','omaha8','s', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,5)]),
-            'cour_hi' : ('hold', None,'h', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,5)]),
-          'cour_hilo' : ('hold', None,'s', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,5)]),
+            'cour_hi' : ('hold', 'omaha','h', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,5)]),
+          'cour_hilo' : ('hold', 'omaha8','s', {'PREFLOP':0,'FLOP':1,'TURN':2,'RIVER':3}, 'RIVER', [(0,5)]),
            '5_studhi' : ('stud','holdem', 'h', {'SECOND': 0, 'THIRD': 1,'FOURTH': 2,'FIFTH': 3}, 'FIFTH', [(0,2),(0,3),(0,4),(0,5)]),
                'razz' : ('stud', None, 'l', {'THIRD': 0,'FOURTH': 1,'FIFTH': 2,'SIXTH': 3,'SEVENTH': 4}, 'SEVENTH', [(0,3),(0,4),(0,5),(0,6),(0,7)]),
              'studhi' : ('stud','7stud', 'h', {'THIRD': 0,'FOURTH': 1,'FIFTH': 2,'SIXTH': 3,'SEVENTH': 4}, 'SEVENTH', [(0,3),(0,4),(0,5),(0,6),(0,7)]),
@@ -470,16 +470,16 @@ def encodeRazzStartHand(cards):
     return 0
 
 if __name__ == '__main__':
-    print("1) " + ("Convert list ID to card (e.g. 1 to 2h)"))
-    print("2) " + ("Convert card to list ID (e.g. 2h to 1)"))
-    s = raw_input('--> ')
+    print(("1) "+ ("Convert list ID to card (e.g. 1 to 2h)")))
+    print(("2) "+ ("Convert card to list ID (e.g. 2h to 1)")))
+    s = input('--> ')
     if s == '1':
         while True:
-            cardid = raw_input(('Enter list ID:')+" ")
-            print(("Card:")+" '%s'" % suitFromCardList[int(cardid)])
+            cardid = input(('Enter list ID:')+" ")
+            print((("Card:")+" '%s'" % suitFromCardList[int(cardid)]))
     elif s == '2':
         while True:
-            cardid = raw_input(('Enter card:')+" ")
-            print(("Encoded card:")+" '%s'" % encodeCard(cardid))
+            cardid = input(('Enter card:')+" ")
+            print((("Encoded card:")+" '%s'" % encodeCard(cardid)))
     else:
         print(("Please enter 1 or 2"))

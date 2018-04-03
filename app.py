@@ -20,10 +20,12 @@ import os
 import codecs
 import datetime
 
-from StringIO import StringIO
+from io import StringIO
 
 from gui import *
 from BovadaToFpdb import Bovada
+
+from PyQt5.QtCore import pyqtSignal
 
 class Worker(QtCore.QThread):
 
@@ -51,7 +53,9 @@ class Worker(QtCore.QThread):
                      showKnown,
                      fastFold,
                      separateTablesByMaxSeats,
-                     saveErrors):
+                     saveErrors,
+                     rftrigger,
+                     upbtrigger):
         self.inputDir = inputDir
         self.outputDir = outputDir
         self.moveDir = moveDir
@@ -60,6 +64,8 @@ class Worker(QtCore.QThread):
         self.fastFold = fastFold
         self.separateTablesByMaxSeats = separateTablesByMaxSeats
         self.saveErrors = saveErrors
+        self.rftrigger = rftrigger
+        self.upbtrigger = upbtrigger
         self.start()
 
     def readFile(self, fileIn):
@@ -139,7 +145,7 @@ class Worker(QtCore.QThread):
             fileOut.close()
 
             processedFiles += 1
-            self.emit(QtCore.SIGNAL('updateProgressBar'), processedFiles, totalFiles)
+            self.upbtrigger.emit(processedFiles, totalFiles)
 
             if processedHandsTotal > origPht:
                 numFilesWithHands += 1
@@ -151,12 +157,15 @@ class Worker(QtCore.QThread):
         if self.saveErrors:
             errorsOut.close()
 
-        self.emit(QtCore.SIGNAL('runFinished'), processedHandsTotal, numFilesWithHands)
+        self.rftrigger.emit(processedHandsTotal, numFilesWithHands)
 
-class MyWidget(QtGui.QWidget):
+class MyWidget(QtWidgets.QWidget):
+
+    rftrigger = pyqtSignal(int, int)
+    upbtrigger = pyqtSignal(int, int)
 
     def __init__(self, parent = None):
-        QtGui.QWidget.__init__(self, parent)
+        QtWidgets.QWidget.__init__(self, parent)
 
         self.lastSelectedIDir = ''
         self.lastSelectedODir = ''
@@ -168,8 +177,8 @@ class MyWidget(QtGui.QWidget):
         self.loadPreferences()
 
         self.thread = Worker()
-        self.connect(self.thread, QtCore.SIGNAL('updateProgressBar'), self.updateProgressBar)
-        self.connect(self.thread, QtCore.SIGNAL('runFinished'), self.runFinished)
+        self.rftrigger.connect(self.runFinished)
+        self.upbtrigger.connect(self.updateProgressBar)
 
         self.ui.inputDirButton.clicked.connect(self.selectInputDir)
         self.ui.outputDirButton.clicked.connect(self.selectOutputDir)
@@ -378,7 +387,9 @@ class MyWidget(QtGui.QWidget):
                                                  showKnown,
                                                  fastFold,
                                                  separateTablesByMaxSeats,
-                                                 saveErrors)
+                                                 saveErrors,
+                                                 self.rftrigger,
+                                                 self.upbtrigger)
         else:
             if not inputText or not outputText:
                 self.ui.statusLabel.setStyleSheet('color: red')
@@ -399,22 +410,24 @@ class MyWidget(QtGui.QWidget):
                                                  showKnown,
                                                  fastFold,
                                                  separateTablesByMaxSeats,
-                                                 saveErrors)
+                                                 saveErrors,
+                                                 self.rftrigger,
+                                                 self.upbtrigger)
 
     def selectInputDir(self):
-        iDir = QtGui.QFileDialog.getExistingDirectory(None, '', self.lastSelectedIDir)
+        iDir = QtWidgets.QFileDialog.getExistingDirectory(None, '', self.lastSelectedIDir)
         if iDir:
             self.ui.inputDirText.setText(iDir)
             self.lastSelectedIDir = iDir
 
     def selectOutputDir(self):
-        oDir = QtGui.QFileDialog.getExistingDirectory(None, '', self.lastSelectedODir)
+        oDir = QtWidgets.QFileDialog.getExistingDirectory(None, '', self.lastSelectedODir)
         if oDir:
             self.ui.outputDirText.setText(oDir)
             self.lastSelectedODir = oDir
 
     def selectMoveDir(self):
-        mDir = QtGui.QFileDialog.getExistingDirectory(None, '', self.lastSelectedMDir)
+        mDir = QtWidgets.QFileDialog.getExistingDirectory(None, '', self.lastSelectedMDir)
         if mDir:
             self.ui.moveDirText.setText(mDir)
             self.lastSelectedMDir = mDir
@@ -428,7 +441,7 @@ class MyWidget(QtGui.QWidget):
 if __name__ == "__main__":
     import sys
 
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     Form = MyWidget()
     Form.show()
 

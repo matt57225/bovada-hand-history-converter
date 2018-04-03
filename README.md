@@ -5,7 +5,7 @@ This program converts Ignition/Bovada poker hand histories to PokerStars format.
 
 View the [Updates](#Updates) section to see details of any changes/bug fixes.  You can update to the latest version by re-downloading all of the files in this repository and replacing the old files with the new ones.
 
-**This converter is beta software and has not been tested extensively (use it at your own risk).  It has only been tested with NLHE and PLO cash game hands.  It is recommended that you backup your original hand history files (and keep them in a safe place) before using this converter.  It is also recommended that you backup your databases before using this converter.**
+**This converter is beta software and has not been tested extensively (use it at your own risk).  It has been tested with NLHE and PLO cash game hands (and some NLHE tournament hands).  It is recommended that you backup your original hand history files (and keep them in a safe place) before using this converter.  It is also recommended that you backup your databases before using this converter.**
 
 A large portion of the code in this project is modified code (mostly unused code was removed) from the <a href="http://fpdb.wikidot.com/" target="_blank">FPDB</a> project (<a href="https://github.com/ChazDazzle/fpdb-chaz" target="_blank">GitHub page 1</a>, <a href="https://github.com/philroberts/FPDB-for-OSX" target="_blank">GitHub page 2</a>)
 <br>
@@ -22,49 +22,49 @@ If you find this program useful and would like to make a donation click on one o
 Complete the following steps in order.
 
 #### *Short Version*
-1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  2.7.x (install the latest 2.7.x)
-  * **DO NOT INSTALL PYTHON 3.5.x, the converter will not work with this version**
-  * enable/install ```"Add python.exe to Path"``` and ```"pip"```, no other optional features need to be installed
-2. Install <a href="https://www.riverbankcomputing.com/software/pyqt/download" target="_blank">PyQt4</a> (direct download links - <a href="http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x32.exe" target="_blank">32-bit</a>, <a href="http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x64.exe" target="_blank">64-bit</a>)
-  * only the Qt runtime needs to be installed (minimal install)
+1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.5.x (install the latest 3.5.x)
+  * enable/install ```"Add Python 3.6 to PATH"``` (from the first screen) and ```"pip"``` (from the "Customize installation" screen), no other features need to be installed
+2. Install <a href="https://www.riverbankcomputing.com/software/pyqt/download5" target="_blank">PyQt5</a>
+  * install via <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">Command Prompt</a> with the following command:
+    * ```pip3 install PyQt5```
 3. Install <a href="https://pypi.python.org/pypi/pytz" target="_blank">pytz</a>
   * install via <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">Command Prompt</a> with the following command:
     * ```easy_install --upgrade pytz```
 4. Download and run the converter
   * scroll to the top of this webpage and download the converter (click on ```"Clone or download"``` then click ```"Download ZIP"```)
-  * extract the folder within the zip you downloaded to a new folder on your computer
-  * open a Command Prompt window to that folder and run the following command:
+  * extract the folder within the zip file you downloaded to a new folder on your computer
+  * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window to that folder and run the following command:
     * ```python app.py```
   * the program might load slowly the first time but each time after that it should load quickly
   * **you probably will want to make a shortcut to run the converter (see details below)**
 
 #### *Detailed Version*
-1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  2.7.x (install the latest 2.7.x)
-  * **DO NOT INSTALL PYTHON 3.5.x, the converter will not work with this version**
-  * on the ```"Customize Python 2.7.x"``` screen (installer's 3rd screen) enable ```"Add python.exe to Path"``` by clicking on it's icon and selecting ```"Will be installed on local hard drive"```
-  * on the same screen enable/install ```"pip"``` also (required for step 3)
-  * you can choose to not install optional features from the same screen (except ```"Add python.exe to Path"``` and ```"pip"```)
-    * click on each item's icon ```"Register Extensions"```, etc. and select ```"Entire feature will be unavailable"``` or ```"Feature will be installed when required"```
+1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.5.x (install the latest 3.5.x)
+  * on the installer's first screen check/enable ```"Add Python 3.6 to PATH"```
+  * (optional) on the same screen you can click ```"Customize installation"``` and uncheck all features except for ```"pip"``` (pip is required for step 3)
+  * click "Next" button until you see an "Install" button and then click the "Install" button (you do not need to check any more boxes)
+  * when installation is complete you will have an option to "Disable path length limit", do not choose this option just click the "Close" button
   * Test if Python is installed by doing the following:
     * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window
     * type ```python --version```
     * press Enter key
     * if a version is shown then Python is installed
-    * **if this is not working you might need to sign out of your Windows user account and sign back in or restart the computer and if it's still not working after that see [Troubleshooting](#Troubleshooting) step 3**
-2. Install <a href="https://www.riverbankcomputing.com/software/pyqt/download" target="_blank">PyQt4</a> (direct download links - <a href="http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x32.exe" target="_blank">32-bit</a>, <a href="http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.11.4/PyQt4-4.11.4-gpl-Py2.7-Qt4.8.7-x64.exe" target="_blank">64-bit</a>)
-  * only the Qt runtime needs to be installed
-  * on the ```"Choose Components"``` screen (installer's 3rd screen) uncheck all checkboxes except Qt runtime (or choose ```"Minimal"``` from the drop-down menu)
-3. Install <a href="https://pypi.python.org/pypi/pytz" target="_blank">pytz</a>
-  * open a Command Prompt window
+    * **if this is not working you might need to sign out of your Windows user account and sign back in or restart the computer
+2. Install <a href="https://www.riverbankcomputing.com/software/pyqt/download5" target="_blank">PyQt5</a>
+  * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window
   * type ```easy_install --upgrade pytz```
   * press Enter key
   * wait for installation to complete
-  * if this is not working see [Troubleshooting](#Troubleshooting) step 3
+3. Install <a href="https://pypi.python.org/pypi/pytz" target="_blank">pytz</a>
+  * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window
+  * type ```pip3 install PyQt5```
+  * press Enter key
+  * wait for installation to complete
 4. Download and run the converter
   * scroll to the top of this webpage
   * click on ```"Clone or download"``` then click ```"Download ZIP"```
   * extract the folder (this folder can be renamed) within the zip you downloaded to a new folder on your computer
-  * open a Command Prompt window to that folder (hold shift and right click in/on that folder and then click on ```"Open command window here"```)
+  * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window to that folder (hold shift and right click in/on that folder and then click on ```"Open command window here"```)
   * type ```python app.py```
   * press Enter key and the converter should start running and the GUI should appear (you can minimize the Command Prompt window while it's running), the program might load slowly the first time but each time after that it should load quickly
   * **you probably will want to make a shortcut to run the converter by doing the following:**
@@ -75,36 +75,22 @@ Complete the following steps in order.
     * you can double click on this cmd (or bat) file to run the converter, you can also make a shortcut by right clicking on the cmd (or bat) file and then clicking ```"Send to"``` --> ```"Desktop (create shortcut)"``` (the shortcut can be renamed)
 
 ## Mac
-* This software has not been tested on Mac
 * The installation steps for Mac should be similar to the Windows installation steps
 * Python might already be installed on your system, check by doing the following:
   * open a Terminal window
   * type ```python --version```
   * press Enter key
   * if a version is shown then Python is installed
-
-<a id="Troubleshooting"></a>
-## Troubleshooting
-1. Try using 32-bit version of PyQt4 instead of 64-bit version.
-2. Try installing Python and PyQt4 with default settings (do not do minimal installs)
-3. If you did not ```"Add python.exe to Path"``` from step 1 in the [Windows](#Windows) section you can do it manually by editing the ```"PATH"``` or ```"Path"``` user or system environment variable to include both of the following paths:
-
-  C:\Python27\
-
-  C:\Python27\Scripts
-
-  Test if its working by doing the following:
-   * open a Command Prompt window
-   * type ```python --version```
-   * press Enter key
-   * if a version is shown then it worked
-   * **You might need to sign out of your Windows user account and sign back in or restart the computer after doing this for it to work**
+  * **make sure you are using Python 3.5.x (other versions may not work)
 
 ## Misc
 #### Packaging converter into a single executable file (Windows and Mac)
 * This can be done using <a href="http://www.pyinstaller.org/" target="_blank">PyInstaller</a> or similar software
 
 ## Updates <a name="Updates"></a>
+**4/3/2018**
+- update for Python3
+
 **8/15/2016**
 - fix for Ignition hands
 

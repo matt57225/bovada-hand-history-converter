@@ -27,16 +27,12 @@ import datetime
 from pytz import timezone
 import pytz
 
-import logging
-
-log = logging.getLogger("parser")
-
 import Hand
-#from Exceptions import *
 
 class HandHistoryConverter():
     re_tzOffset = re.compile('^\w+[+-]\d{4}$')
     copyGameHeader = False
+    summaryInFile  = False
 
     def __init__(self):
         self.sitename = None
@@ -90,14 +86,13 @@ class HandHistoryConverter():
                 elif gametype['base'] == 'draw':
                     hand = Hand.DrawHand(None, self, self.sitename, gametype, handText)
             else:
-                print(("%s Unsupported game type: %s") % (self.sitename, gametype))
-                #raise FpdbParseError
+                print((("%s Unsupported game type: %s") % (self.sitename, gametype)))
                 return
 
             if hand:
                 return hand
             else:
-                print(("%s Unsupported game type: %s") % (self.sitename, gametype))
+                print((("%s Unsupported game type: %s") % (self.sitename, gametype)))
 
     def isPartial(self, handText):
         count = 0
@@ -117,27 +112,23 @@ class HandHistoryConverter():
     def readAntes(self, hand): abstract
     def readBringIn(self, hand): abstract
     def readButton(self, hand): abstract
-    def readHeroCards(self, hand): abstract
-    def readPlayerCards(self, hand, street): abstract
+    def readHoleCards(self, hand): abstract
     def readAction(self, hand, street): abstract
     def readCollectPot(self, hand): abstract
     def readShownCards(self, hand): abstract
     def readTourneyResults(self, hand): abstract
-
     def readOther(self, hand): pass
 
     def getRake(self, hand):
         hand.rake = hand.totalpot - hand.totalcollected
         round = -1 if hand.gametype['type'] == "tour" else -0.01
         if hand.rake < 0 and (not hand.roundPenny or hand.rake < round):
-            print(("hhc.getRake(): '%s': Converter may not have processed hand correctly: Amount collected (%s) is greater than the pot (%s)")
-                      % (hand.handid,str(hand.totalcollected), str(hand.totalpot)))
-            #raise FpdbParseError
+            print((("hhc.getRake(): '%s': Converter may not have processed hand correctly: Amount collected (%s) is greater than the pot (%s)")
+                      % (hand.handid,str(hand.totalcollected), str(hand.totalpot))))
             return
         elif hand.totalpot > 0 and Decimal(hand.totalpot/4) < hand.rake and not hand._fastFold:
-            print(("hhc.getRake(): '%s': Converter may not have calculated rake correctly: (%s) > 25 pct of pot (%s)")
-                      % (hand.handid,str(hand.rake), str(hand.totalpot)))
-            #raise FpdbParseError
+            print((("hhc.getRake(): '%s': Converter may not have calculated rake correctly: (%s) > 25 pct of pot (%s)")
+                      % (hand.handid,str(hand.rake), str(hand.totalpot))))
             return
 
     def guessMaxSeats(self, hand):
@@ -184,8 +175,7 @@ class HandHistoryConverter():
         if wantedTimezone=="UTC":
             wantedTimezone = pytz.utc
         else:
-            print(("Unsupported target timezone: ") + givenTimezone)
-            #raise FpdbParseError(("Unsupported target timezone: ") + givenTimezone)
+            print((("Unsupported target timezone: ") + givenTimezone))
             return
         givenTZ = None
         if HandHistoryConverter.re_tzOffset.match(givenTimezone):
@@ -249,14 +239,16 @@ class HandHistoryConverter():
             givenTZ = timezone('Australia/Darwin')
         elif givenTimezone in ('AEST', 'AET'): # Australian Eastern Standard Time
             givenTZ = timezone('Australia/Sydney')
-        elif givenTimezone == 'NZT': # New Zealand Time
+        elif givenTimezone in ('NZST', 'NZT'): # New Zealand Time
             givenTZ = timezone('Pacific/Auckland')
         elif givenTimezone == 'UTC': # Universal time co-ordinated
             givenTZ = pytz.UTC
+        elif givenTimezone in pytz.all_timezones:
+            givenTZ = timezone(givenTimezone)
 
         if givenTZ is None:
             # do not crash if timezone not in list, just return UTC localized time
-            print("Timezone conversion not supported") + ": " + givenTimezone + " " + str(time)
+            print(("Timezone conversion not supported") + ": " + givenTimezone + " " + str(time))
             givenTZ = pytz.UTC
             return givenTZ.localize(time)
 
@@ -280,7 +272,7 @@ class HandHistoryConverter():
         if not money:
             return money
         money = money.replace(' ', '')
-        money = money.replace(u'\xa0', u'')
+        money = money.replace('\xa0', '')
         if 'K' in money:
             money = money.replace('K', '000')
         if 'M' in money:

@@ -20,7 +20,7 @@ import os
 import codecs
 import datetime
 
-from StringIO import StringIO
+from io import StringIO
 
 from BovadaToFpdb import Bovada
 
@@ -240,7 +240,7 @@ class AppNoGui():
                 for i in invalidDirs:
                     msg += (i + '/')
                 msg = msg[:-1]
-                print(msg + ' directory is not valid')
+                print((msg + ' directory is not valid'))
                 return False
         else:
             if inputPathValid and outputPathValid:
@@ -249,7 +249,7 @@ class AppNoGui():
                 for i in invalidDirs:
                     msg += (i + '/')
                 msg = msg[:-1]
-                print(msg + ' directory is not valid')
+                print((msg + ' directory is not valid'))
                 return False
 
     def performChecks(self):
