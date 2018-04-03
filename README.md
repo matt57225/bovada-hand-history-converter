@@ -41,7 +41,7 @@ Complete the following steps in order.
 #### *Detailed Version*
 1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.5.x (install the latest 3.5.x)
   * on the installer's first screen check/enable ```"Add Python 3.6 to PATH"```
-  * (optional) on the same screen you can click ```"Customize installation"``` and uncheck all features except for ```"pip"``` (pip is required for step 3)
+  * (optional) on the same screen you can click ```"Customize installation"``` and uncheck all features except for ```"pip"``` (pip is required for step 2)
   * click "Next" button until you see an "Install" button and then click the "Install" button (you do not need to check any more boxes)
   * when installation is complete you will have an option to "Disable path length limit", do not choose this option just click the "Close" button
   * Test if Python is installed by doing the following:
