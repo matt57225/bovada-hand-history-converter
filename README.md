@@ -81,7 +81,7 @@ Complete the following steps in order.
   * type ```python --version```
   * press Enter key
   * if a version is shown then Python is installed
-  * **make sure you are using Python 3.6.x (other versions may not work)
+  * make sure you are using Python 3.6.x (other versions may not work)
 
 ## Misc
 #### Packaging converter into a single executable file (Windows and Mac)
