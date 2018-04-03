@@ -19,7 +19,7 @@ If you find this program useful and would like to make a donation click on one o
 
 <a id="Windows"></a>
 ## Windows
-Complete the following steps in order.  If you have already set up <a href="https://github.com/matt57225/betonline-hand-history-converter" target="_blank">BetOnline Hand History Converter</a> or <a href="https://github.com/matt57225/betonline-live-hand-history-converter" target="_blank">BetOnline Live Hand History Converter</a>, you can skip to step 4
+Complete the following steps in order.
 
 #### *Short Version*
 1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  2.7.x (install the latest 2.7.x which is probably 2.7.11)
