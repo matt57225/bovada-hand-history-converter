@@ -13,8 +13,10 @@ A large portion of the code in this project is modified code (mostly unused code
 <hr>
 If you find this program useful and would like to make a donation click on the link below
 <br>
+<br>
 <a href="http://matt57225.github.io/bovada-hand-history-converter/" target="_blank">PayPal</a>
-
+<br>
+<br>
 BitCoin - 3ActJnZfzDrMV1YKYQdxpDcApiGJrfx6qe
 
 <a id="Windows"></a>
