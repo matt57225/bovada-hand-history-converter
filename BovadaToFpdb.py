@@ -339,11 +339,13 @@ class Bovada(HandHistoryConverter):
         for a in m:
             if re.search(r"%s (\s?\[ME\]\s)?: Card dealt to a spot" % re.escape(a.group('PNAME')), hand.handText):
                 if not hand.buttonpos and a.group('PNAME')=='Dealer':
-                    hand.buttonpos = int(a.group('SEAT'))
+                    hand.buttonpos = seatNo
+                    #hand.buttonpos = int(a.group('SEAT'))
                 if a.group('HERO'):
                     self.playersMap[a.group('PNAME')] = 'Hero'
                 else:
-                    self.playersMap[a.group('PNAME')] = 'Seat %s' % a.group('SEAT')
+                    self.playersMap[a.group('PNAME')] = a.group('PNAME')
+                    #self.playersMap[a.group('PNAME')] = 'Seat %s' % a.group('SEAT')
                 hand.addPlayer(seatNo, self.playersMap[a.group('PNAME')], self.clearMoneyString(a.group('CASH')))
             seatNo += 1
         if len(hand.players)==0:
