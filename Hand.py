@@ -869,7 +869,10 @@ class HoldemOmahaHand(Hand):
             seatnum = player[0]
             name = player[1]
             if name in self.collectees and name in self.shown:
-                wonAmt = self.collectees[name]
+                if self.gametype['type'] == 'tour' and self.collectees[name] == (Decimal(self.sb) + Decimal(self.sb)):
+                    wonAmt = Decimal(self.sb) + Decimal(self.bb)
+                else:
+                    wonAmt = self.collectees[name]
                 
                 if sdOccurred:
                     print(("Seat %d: %s showed [%s] and won (%s%s)"
@@ -883,7 +886,10 @@ class HoldemOmahaHand(Hand):
                              % (seatnum, name, self.sym, wonAmt)), file=fh)
 
             elif name in self.collectees:
-                wonAmt = self.collectees[name]
+                if self.gametype['type'] == 'tour' and self.collectees[name] == (Decimal(self.sb) + Decimal(self.sb)):
+                    wonAmt = Decimal(self.sb) + Decimal(self.bb)
+                else:
+                    wonAmt = self.collectees[name]
                 
                 print(("Seat %d: %s collected (%s%s)"
                              % (seatnum, name, self.sym, wonAmt)), file=fh)
