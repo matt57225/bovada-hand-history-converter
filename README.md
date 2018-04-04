@@ -15,7 +15,7 @@ If you find this program useful and would like to make a donation click on one o
 
 <a href="http://matt57225.github.io/bovada-hand-history-converter/" target="_blank">PayPal</a>
 
-<a href="https://www.coinbase.com/matt57225" target="_blank">BitCoin</a>
+BitCoin - 3ActJnZfzDrMV1YKYQdxpDcApiGJrfx6qe
 
 <a id="Windows"></a>
 ## Windows
