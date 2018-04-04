@@ -492,7 +492,7 @@ class Hand(object):
     def totalPot(self):
         # This gives us the total amount put in the pot
         if self.totalpot is None:
-            self.pot.end(self.sb, self.bb)
+            self.pot.end(self.sb, self.bb, self.collectees)
             self.totalpot = self.pot.total
 
         #if self.adjustCollected:
@@ -869,11 +869,8 @@ class HoldemOmahaHand(Hand):
             seatnum = player[0]
             name = player[1]
             if name in self.collectees and name in self.shown:
-                #if self.collectees[name] > 0 and self.collectees[name] <= (Decimal(self.sb) + Decimal(self.sb)):
-                if self.collectees[name] == (Decimal(self.sb) + Decimal(self.sb)):
-                    wonAmt = Decimal(self.sb) + Decimal(self.bb)
-                else:
-                    wonAmt = self.collectees[name]
+                wonAmt = self.collectees[name]
+                
                 if sdOccurred:
                     print(("Seat %d: %s showed [%s] and won (%s%s)"
                              % (seatnum,
@@ -886,11 +883,8 @@ class HoldemOmahaHand(Hand):
                              % (seatnum, name, self.sym, wonAmt)), file=fh)
 
             elif name in self.collectees:
-                #if self.collectees[name] > 0 and self.collectees[name] <= (Decimal(self.sb) + Decimal(self.sb)):
-                if self.collectees[name] == (Decimal(self.sb) + Decimal(self.sb)):
-                    wonAmt = Decimal(self.sb) + Decimal(self.bb)
-                else:
-                    wonAmt = self.collectees[name]
+                wonAmt = self.collectees[name]
+                
                 print(("Seat %d: %s collected (%s%s)"
                              % (seatnum, name, self.sym, wonAmt)), file=fh)
             elif name in self.folded:
@@ -1353,6 +1347,7 @@ class Pot(object):
         self.handid       = 0
         self.hsb          = 0
         self.hbb          = 0
+        self.collectees   = set()
 
     def setSym(self, sym):
         self.sym = sym
@@ -1388,9 +1383,10 @@ class Pot(object):
             return self.streettotals[street]
         return 0
 
-    def end(self, hsb, hbb):
+    def end(self, hsb, hbb, collectees):
         self.hsb = hsb
         self.hbb = hbb
+        self.collectees = collectees
         self.total = sum(self.committed.values()) + sum(self.common.values())
 
         # Return any uncalled bet.
@@ -1438,8 +1434,11 @@ class Pot(object):
         if self.total is None:
             print(("Error in printing Hand object"))
             return
-        if self.total == (Decimal(self.hsb) + Decimal(self.hsb)):
-            tPot = Decimal(self.hsb) + Decimal(self.hbb)
+            
+        if len(self.collectees) == 1 and self.total == (Decimal(self.hsb) + Decimal(self.hbb)):
+            tPot = Decimal(self.hsb) + Decimal(self.hsb)
+        #elif len(self.collectees) > 1 and self.total == (Decimal(self.hsb) + Decimal(self.hsb)):
+            #tPot = Decimal(self.hsb) + Decimal(self.hbb)
         else:
             tPot = self.total
         ret = "Total pot %s%.2f" % (self.sym, tPot)
