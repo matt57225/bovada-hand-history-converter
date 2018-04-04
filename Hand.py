@@ -886,7 +886,7 @@ class HoldemOmahaHand(Hand):
                              % (seatnum, name, self.sym, wonAmt)), file=fh)
 
             elif name in self.collectees:
-                #if len(self.collectees) == 1 and self.gametype['type'] == 'tour' and self.collectees[name] == (Decimal(self.sb) + Decimal(self.sb)):
+                if len(self.collectees) == 1 and self.gametype['type'] == 'tour' and self.collectees[name] == (Decimal(self.sb) + Decimal(self.sb)):
                     wonAmt = Decimal(self.sb) + Decimal(self.bb)
                 else:
                     wonAmt = self.collectees[name]
