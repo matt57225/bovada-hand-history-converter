@@ -855,8 +855,7 @@ class HoldemOmahaHand(Hand):
         for name in self.pot.returned:
             print(("Uncalled bet (%s%s) returned to %s" %(self.sym, self.pot.returned[name],name)), file=fh)
         for entry in self.collected:
-            #if entry[1] > 0 and entry[1] <= (Decimal(self.sb) + Decimal(self.sb)):
-            if entry[1] == (Decimal(self.sb) + Decimal(self.sb)):
+            if len(self.collected) == 1 and entry[1] == (Decimal(self.sb) + Decimal(self.sb)):
                 entry[1] = Decimal(self.sb) + Decimal(self.bb)
             print(("%s collected %s%s from pot" %(entry[0], self.sym, entry[1])), file=fh)
 
@@ -1444,9 +1443,12 @@ class Pot(object):
         if self.total is None:
             print(("Error in printing Hand object"))
             return
-            
-        if len(self.collectees) == 1 and self.total == (Decimal(self.hsb) + Decimal(self.hbb)):
-            tPot = Decimal(self.hsb) + Decimal(self.hsb)
+
+        if len(self.collectees) == 1:
+            if ((Decimal(self.hsb) + Decimal(self.hbb)) <= list(self.collectees.values())[0]):
+                tPot = Decimal(self.hsb) + Decimal(self.hbb)
+            else:
+                tPot = Decimal(self.hsb) + Decimal(self.hsb)
         #elif len(self.collectees) > 1 and self.total == (Decimal(self.hsb) + Decimal(self.hsb)):
             #tPot = Decimal(self.hsb) + Decimal(self.hbb)
         else:
