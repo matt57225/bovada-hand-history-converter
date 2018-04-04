@@ -64,7 +64,7 @@ Complete the following steps in order.
   * scroll to the top of this webpage
   * click on ```"Clone or download"``` then click ```"Download ZIP"```
   * extract the folder (this folder can be renamed) within the zip you downloaded to a new folder on your computer
-  * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window to that folder (hold shift and right click in/on that folder and then click on ```"Open command window here"```)
+  * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window to that folder
   * type ```python app.py```
   * press Enter key and the converter should start running and the GUI should appear (you can minimize the Command Prompt window while it's running), the program might load slowly the first time but each time after that it should load quickly
   * **you probably will want to make a shortcut to run the converter by doing the following:**
