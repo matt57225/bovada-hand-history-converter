@@ -55,7 +55,7 @@ class Hand(object):
         self.tourneyId = None
         self.tourneyName = None
         self.tourneyTypeId = None
-        self.buyin = ""
+        self.buyin = None
         self.buyinCurrency = None
         self.buyInChips = None
         self.fee = None
@@ -632,11 +632,15 @@ class Hand(object):
             gs = "PokerStars Hand #%s: " % self.handid
 
         if self.tourNo is not None and self.mixed is not None: # mixed tournament
-            gs = gs + "Tournament #%s,%s %s (%s) - Level %s (%s) - " % (self.tourNo,
-                            self.buyin, self.MS[self.mixed], self.getGameTypeAsString(), self.level, self.getStakesAsString())
+            if self.buyin is not None:
+                gs = gs + "Tournament #%s, $%s+$%s %s (%s) - Level %s (%s) - " % (self.tourNo, self.buyin, self.fee, self.MS[self.mixed], self.getGameTypeAsString(), self.level, self.getStakesAsString())
+            else:
+                gs = gs + "Tournament #%s, %s (%s) - Level %s (%s) - " % (self.tourNo, self.MS[self.mixed], self.getGameTypeAsString(), self.level, self.getStakesAsString())
         elif self.tourNo is not None: # all other tournaments
-            gs = gs + "Tournament #%s,%s %s - Level %s (%s) - " % (self.tourNo,
-                            self.buyin, self.getGameTypeAsString(), self.level, self.getStakesAsString())
+            if self.buyin is not None:
+                gs = gs + "Tournament #%s, $%s+$%s %s - Level %s (%s) - " % (self.tourNo, self.buyin, self.fee, self.getGameTypeAsString(), self.level, self.getStakesAsString())
+            else:
+                gs = gs + "Tournament #%s, %s - Level %s (%s) - " % (self.tourNo, self.getGameTypeAsString(), self.level, self.getStakesAsString())
         elif self.mixed is not None: # all other mixed games
             gs = gs + " %s (%s, %s) - " % (self.MS[self.mixed],
                             self.getGameTypeAsString(), self.getStakesAsString())
@@ -647,7 +651,7 @@ class Hand(object):
             timestr = datetime.datetime.strftime(self.startTime, '%Y/%m/%d %H:%M:%S ET')
         except TypeError:
             print(("*** ERROR - HAND: calling writeGameLine with unexpected STARTTIME value, expecting datetime.date object, received:"), self.startTime)
-            print ("*** Make sure your HandHistoryConverter is setting hand.startTime properly!")
+            print("*** Make sure your HandHistoryConverter is setting hand.startTime properly!")
             print(("*** Game String:"), gs)
             return gs
         else:
@@ -656,7 +660,7 @@ class Hand(object):
     def writeTableLine(self):
         table_string = "Table "
         if self.gametype['type'] == 'tour':
-            table_string = table_string + "\'%s %s\' %s-max" % (self.tourNo, self.tablename, self.maxseats)
+            table_string = table_string + "\'%s\' %s-max" % (self.tablename, self.maxseats)
         else:
             if self._separateTablesByMaxSeats:
                 table_string = table_string + "\'%s %s-max\' %s-max" % (self.tablename, self.maxseats, self.maxseats)

@@ -32,6 +32,7 @@ class Bovada(HandHistoryConverter):
 
     sitename = "Bovada"
     summaryInFile = True
+    #copyGameHeader = True
     sym = {'USD': "\$", 'T$': "", "play": ""}
     substitutions = {
                      'LEGAL_ISO' : "USD",      # legal ISO currency codes
@@ -303,8 +304,10 @@ class Bovada(HandHistoryConverter):
                         else:
                             info['BIRAKE'] = '0'
 
-                        hand.buyin = int(100*Decimal(info['BIAMT']))
-                        hand.fee = int(100*Decimal(info['BIRAKE']))
+                        #hand.buyin = int(100*Decimal(info['BIAMT']))
+                        #hand.fee = int(100*Decimal(info['BIRAKE']))
+                        hand.buyin = Decimal(info['BIAMT'])
+                        hand.fee = Decimal(info['BIRAKE'])
             if key == 'TABLE':
                 if info.get('TABLENO'):
                     hand.tablename = info.get('TABLENO')

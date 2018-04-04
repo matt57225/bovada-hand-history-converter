@@ -140,9 +140,7 @@ class HandHistoryConverter():
 
         mo = self.maxOccSeat(hand)
 
-        if mo > 2 and mo <= 6: mo = 6
-
-        if mo > 6 and mo <= 9: mo = 9
+        if mo > 4 and mo <= 6: mo = 6
 
         if mo == 10: return 10
 
