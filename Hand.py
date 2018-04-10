@@ -871,8 +871,13 @@ class HoldemOmahaHand(Hand):
         for player in [x for x in self.players if x[1] in players_who_act_preflop]:
             seatnum = player[0]
             name = player[1]
+            rAmt = 0
+
+            if (name in self.pot.returned):
+                rAmt = self.pot.returned[name]
+
             if name in self.collectees and name in self.shown:
-                if len(self.collectees) == 1 and self.gametype['type'] == 'tour' and self.collectees[name] == (Decimal(self.sb) + Decimal(self.sb)):
+                if len(self.collectees) == 1 and rAmt == 0 and self.collectees[name] == (Decimal(self.sb) + Decimal(self.sb)):
                     wonAmt = Decimal(self.sb) + Decimal(self.bb)
                 else:
                     wonAmt = self.collectees[name]
@@ -889,7 +894,7 @@ class HoldemOmahaHand(Hand):
                              % (seatnum, name, self.sym, wonAmt)), file=fh)
 
             elif name in self.collectees:
-                if len(self.collectees) == 1 and self.gametype['type'] == 'tour' and self.collectees[name] == (Decimal(self.sb) + Decimal(self.sb)):
+                if len(self.collectees) == 1 and rAmt == 0 and self.collectees[name] == (Decimal(self.sb) + Decimal(self.sb)):
                     wonAmt = Decimal(self.sb) + Decimal(self.bb)
                 else:
                     wonAmt = self.collectees[name]
