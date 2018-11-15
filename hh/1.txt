@@ -1,0 +1,47 @@
+Ignition Hand #3589791199 Zone Poker ID#1232 HOLDEMZonePoker No Limit - 2018-04-07 13:54:40
+Seat 1: UTG+1 ($19.58 in chips)
+Seat 2: UTG+2 [ME] ($49.50 in chips)
+Seat 3: Dealer ($58.62 in chips)
+Seat 4: Small Blind ($9.91 in chips)
+Seat 5: Big Blind ($60.27 in chips)
+Seat 6: UTG ($47.42 in chips)
+Dealer : Set dealer [3]
+Small Blind : Small Blind $0.25
+Big Blind : Big blind $0.50
+*** HOLE CARDS ***
+UTG+1 : Card dealt to a spot [Ks 4c]
+UTG+2 [ME] : Card dealt to a spot [5c 9d]
+Dealer : Card dealt to a spot [6h 9h]
+Small Blind : Card dealt to a spot [9c 2h]
+Big Blind : Card dealt to a spot [5h Td]
+UTG : Card dealt to a spot [6s 3c]
+Big Blind : Leave(Auto)
+UTG+2 [ME] : Leave(Auto)
+UTG+1 : Leave(Auto)
+Dealer : Leave(Auto)
+UTG : Folds
+UTG : Leave(Auto)
+UTG+1 : Folds
+UTG+2 [ME] : Folds
+Dealer : Folds
+Small Blind : Folds
+Small Blind : Leave(Auto)
+Big Blind : Showdown(High Card)
+Big Blind : Hand result $0.75
+Enter(Auto)
+Enter(Auto)
+Enter(Auto)
+Dealer : Enter(Auto)
+Enter(Auto)
+Enter(Auto)
+*** SUMMARY ***
+Total Pot($0.75)
+Seat+1: UTG+1 lost with High Card [Ks 4c]
+Seat+2: UTG+2 lost with High Card [5c 9d]
+Seat+3: Dealer lost with High Card [6h 9h]
+Seat+4: Small Blind Folded before the RIVER
+Seat+5: Big Blind $0.75 with High Card [5h Td]
+Seat+6: UTG Folded before the RIVER
+
+
+

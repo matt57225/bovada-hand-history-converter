@@ -1,0 +1,140 @@
+Ignition Hand #3453331430 Zone Poker ID#1036 HOLDEMZonePoker No Limit - 2017-04-24 22:03:10
+Seat 1: UTG ($4.66 in chips)
+Seat 2: UTG+1 ($5.18 in chips)
+Seat 3: UTG+2 ($2.81 in chips)
+Seat 4: Dealer ($5.56 in chips)
+Seat 5: Small Blind ($9.14 in chips)
+Seat 6: Big Blind [ME] ($0.05 in chips)
+Dealer : Set dealer [4] 
+Small Blind : Small Blind $0.02 
+Big Blind [ME] : All-in $0.05 
+*** HOLE CARDS ***
+UTG : Card dealt to a spot [4s 5c] 
+UTG+1 : Card dealt to a spot [Jd 9c] 
+UTG+2 : Card dealt to a spot [2h 6c] 
+Dealer : Card dealt to a spot [2c 3c] 
+Small Blind : Card dealt to a spot [Js 3h] 
+Big Blind [ME] : Card dealt to a spot [Th 7c] 
+UTG+2 : Leave(Auto)
+UTG+1 : Leave(Auto)
+Dealer : Leave(Auto)
+UTG : Folds
+UTG : Leave(Auto)
+UTG+1 : Folds
+UTG+2 : Folds
+Dealer : Folds
+Small Blind : Folds
+Small Blind : Leave(Auto)
+Big Blind [ME] : Return uncalled portion of bet $0.03 
+Big Blind [ME] : Does not show [Th 7c] (High Card)
+Big Blind [ME] : Hand result $0.04 
+Big Blind [ME] : Table deposit $4.93 
+Big Blind [ME] : Leave(Auto)
+Enter(Auto)
+Enter(Auto)
+UTG+1 : Enter(Auto)
+Enter(Auto)
+Enter(Auto)
+Enter(Auto)
+*** SUMMARY ***
+Total Pot($0.04)
+Seat+1: UTG Folded before the RIVER
+Seat+2: UTG+1 lost with High Card [Jd 9c] 
+Seat+3: UTG+2 lost with High Card [2h 6c] 
+Seat+4: Dealer lost with High Card [2c 3c] 
+Seat+5: Small Blind Folded before the RIVER
+Seat+6: Big Blind $0.04 [Does not show] 
+
+
+Ignition Hand #3452258262 Zone Poker ID#1036 HOLDEMZonePoker No Limit - 2017-04-22 01:49:18
+Seat 1: Small Blind ($11.77 in chips)
+Seat 2: Big Blind ($7.83 in chips)
+Seat 3: UTG [ME] ($4.69 in chips)
+Seat 4: UTG+1 ($8.55 in chips)
+Seat 5: UTG+2 ($5.23 in chips)
+Seat 6: Dealer ($7.40 in chips)
+Dealer : Set dealer [6] 
+Small Blind : Small Blind $0.02 
+Big Blind : Big blind $0.05 
+*** HOLE CARDS ***
+Small Blind : Card dealt to a spot [4h 3d] 
+Big Blind : Card dealt to a spot [Th 5s] 
+UTG [ME] : Card dealt to a spot [3c Qc] 
+UTG+1 : Card dealt to a spot [Ah 6c] 
+UTG+2 : Card dealt to a spot [7s 5c] 
+Dealer : Card dealt to a spot [5d 4d] 
+UTG+1 : Leave(Auto)
+UTG [ME] : Folds
+UTG [ME] : Leave(Auto)
+UTG+1 : Folds
+UTG+2 : Calls $0.05 
+Dealer : Calls $0.05 
+Small Blind : Calls $0.03 
+Big Blind : Checks
+*** FLOP *** [2s 9h 9s]
+Small Blind : Checks
+Big Blind : Checks
+UTG+2 : Checks
+Dealer : Checks
+*** TURN *** [2s 9h 9s] [2c]
+Dealer : Leave(Auto)
+Small Blind : Checks
+Big Blind : Checks
+UTG+2 : Checks
+Dealer : Checks
+*** RIVER *** [2s 9h 9s 2c] [Kc]
+Small Blind : Checks
+Big Blind : Checks
+UTG+2 : Checks
+Dealer : Checks
+Small Blind : Showdown [9s 9h 2s 2c Kc] (Two pair)
+Big Blind : Showdown [9s 9h 2s 2c Kc] (Two pair)
+UTG+2 : Showdown [9s 9h 2s 2c Kc] (Two pair)
+Dealer : Showdown [9s 9h 2s 2c Kc] (Two pair)
+Small Blind : Hand result $0.04 
+Big Blind : Hand result $0.07 
+UTG+2 : Hand result $0.04 
+Dealer : Hand result $0.04 
+Small Blind : Leave(Auto)
+Big Blind : Leave(Auto)
+UTG+2 : Leave(Auto)
+Enter(Auto)
+Seat sit out
+Seat re-join
+Enter(Auto)
+Enter(Auto)
+Enter(Auto)
+Enter(Auto)
+Enter(Auto)
+*** SUMMARY ***
+Total Pot($0.20)
+Board [2s 9h 9s 2c Kc]
+Seat+1: Small Blind $0.04 with Two pair [4h 3d-9s 9h 2s 2c Kc] 
+Seat+2: Big Blind $0.07 with Two pair [Th 5s-9s 9h 2s 2c Kc] 
+Seat+3: UTG Folded before the RIVER
+Seat+4: UTG+1 lost with Two pair [Ah 6c] 
+Seat+5: UTG+2 $0.04 with Two pair [7s 5c-9s 9h 2s 2c Kc] 
+Seat+6: Dealer $0.04 with Two pair [5d 4d-9s 9h 2s 2c Kc]
+
+
+Bovada Hand #3598182127: HOLDEM Tournament #19768742 TBL#1, Turbo- Level 2 (20/40) - 2017-12-03 17:43:01
+Seat 1: Dealer (350 in chips)
+Seat 3: Small Blind [ME] (720 in chips)
+Seat 2: Big Blind (430 in chips)
+Dealer : Set dealer [1] 
+Small Blind [ME] : Small blind 20 
+Big Blind : Big blind 40 
+*** HOLE CARDS ***
+Dealer : Card dealt to a spot [2s Qc] 
+Small Blind [ME] : Card dealt to a spot [6d 3h] 
+Big Blind : Card dealt to a spot [9d 6c] 
+Dealer : Folds
+Small Blind [ME] : Folds
+Big Blind : Does not show [9d 6c] (High Card)
+Big Blind : Hand Result 60 
+*** SUMMARY ***
+Total Pot(60)
+Seat+1: Dealer Folded on the FLOP
+Seat+3: Small Blind Folded on the FLOP
+Seat+2: Big Blind 60 [Does not show]
+
