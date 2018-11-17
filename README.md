@@ -3,7 +3,7 @@ This program converts Ignition/Bovada poker hand histories to PokerStars format.
 
 *All hole cards are shown (optional) in HM2's latest version*
 
-View the [Updates](#Updates) section to see details of any changes/bug fixes.  You can update to the latest version by re-downloading all of the files in this repository and replacing the old files with the new ones.
+You can update to the latest version by re-downloading all of the files in this repository and replacing the old files with the new ones.
 
 **This converter is beta software and has not been tested extensively (use it at your own risk).  It has been tested with NLHE and PLO cash game hands (and some NLHE tournament hands).  It is recommended that you backup your original hand history files (and keep them in a safe place) before using this converter.  It is also recommended that you backup your databases before using this converter.**
 
@@ -88,11 +88,3 @@ Complete the following steps in order.
 ## Misc
 #### Packaging converter into a single executable file (Windows and Mac)
 * This can be done using <a href="http://www.pyinstaller.org/" target="_blank">PyInstaller</a> or similar software
-
-## Updates <a name="Updates"></a>
-**4/3/2018**
-- update for Python 3
-
-**8/15/2016**
-- fix for Ignition hands
-
