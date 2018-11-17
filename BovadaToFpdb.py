@@ -257,7 +257,7 @@ class Bovada(HandHistoryConverter):
         hand.allInBlind = False
         m2 = self.re_Knockout.search(self.in_path)
         if m2: info.update(m2.groupdict())
-        
+
         if "Hyper Turbo" in self.in_path:
             hand.speed = "Hyper"
         elif  "Turbo" in self.in_path:
@@ -406,10 +406,15 @@ class Bovada(HandHistoryConverter):
         if not hand.streets.get(firststreet):
             hand.streets[firststreet] = hand.handText
         if hand.gametype['base'] == "hold":
-            m1 = self.re_Board1.search(hand.handText)
-            
-            for street in ('FLOP', 'TURN', 'RIVER'):
-                if m1 and m1.group(street) and not hand.streets.get(street):
+            if hand.gametype['fast']:
+                for street in ('FLOP', 'TURN', 'RIVER'):
+                    m1 = self.re_Board2[street].search(hand.handText)
+                    if m1 and m1.group('CARDS') and not hand.streets.get(street):
+                        hand.streets[street] = m1.group('CARDS')
+            else:
+                m1 = self.re_Board1.search(hand.handText)
+                for street in ('FLOP', 'TURN', 'RIVER'):
+                    if m1 and m1.group(street) and not hand.streets.get(street):
                         hand.streets[street] = m1.group(street)
 
     def readCommunityCards(self, hand, street):
@@ -420,7 +425,7 @@ class Bovada(HandHistoryConverter):
         else:
             if street in ('FLOP','TURN','RIVER'):
                 m = self.re_Board1.search(hand.handText)
-                
+
                 if m and m.group(street):
                     cards = m.group(street).split(' ')
                     hand.setCommunityCards(street, cards)

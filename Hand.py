@@ -518,7 +518,7 @@ class Hand(object):
             (self.collected, self.collectees, self.totalcollected) = gettempcontainers(collected, collectees)
 
         if self.totalcollected is None:
-            self.totalcollected = 0;
+            self.totalcollected = 0
             for entry in self.collected:
                 self.totalcollected += Decimal(entry[1])
 
@@ -881,7 +881,7 @@ class HoldemOmahaHand(Hand):
                     wonAmt = Decimal(self.sb) + Decimal(self.bb)
                 else:
                     wonAmt = self.collectees[name]
-                
+
                 if sdOccurred:
                     print(("Seat %d: %s showed [%s] and won (%s%s)"
                              % (seatnum,
@@ -898,7 +898,7 @@ class HoldemOmahaHand(Hand):
                     wonAmt = Decimal(self.sb) + Decimal(self.bb)
                 else:
                     wonAmt = self.collectees[name]
-                
+
                 print(("Seat %d: %s collected (%s%s)"
                              % (seatnum, name, self.sym, wonAmt)), file=fh)
             elif name in self.folded:
@@ -979,7 +979,7 @@ class DrawHand(Hand):
         #else:
         #    pass
         self.addHoleCards(self.actionStreets[-1], player, open=[], closed=cards, shown=shown, mucked=mucked, dealt=dealt)
-        
+
         if string is not None:
             self.showdownStrings[player] = string
 
@@ -1450,17 +1450,17 @@ class Pot(object):
             return
 
         if len(self.collectees) == 1:
-            if ((Decimal(self.hsb) + Decimal(self.hbb)) <= list(self.collectees.values())[0]):
+            if (list(self.collectees.values())[0] == (Decimal(self.hsb) + Decimal(self.hbb))):
                 tPot = Decimal(self.hsb) + Decimal(self.hbb)
             else:
-                tPot = Decimal(self.hsb) + Decimal(self.hsb)
+                tPot = self.total
         #elif len(self.collectees) > 1 and self.total == (Decimal(self.hsb) + Decimal(self.hsb)):
             #tPot = Decimal(self.hsb) + Decimal(self.hbb)
         else:
             tPot = self.total
         ret = "Total pot %s%.2f" % (self.sym, tPot)
         if len(self.pots) < 2:
-            return ret;
+            return ret
         ret += " Main pot %s%.2f" % (self.sym, self.pots[0][0])
 
         return ret + ''.join([ (" Side pot %s%.2f." % (self.sym, self.pots[x][0]) ) for x in range(1, len(self.pots)) ])
