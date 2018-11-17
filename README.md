@@ -96,5 +96,3 @@ Complete the following steps in order.
 **8/15/2016**
 - fix for Ignition hands
 
-**5/23/2016** 
-- fixed timezone
