@@ -24,14 +24,14 @@ BitCoin - 1EJ7RQKfD18PttnoKXfXqx8LnXrGNELxjs
 Complete the following steps in order.
 
 #### *Short Version*
-1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.6.x (install the latest 3.6.x)
-  * enable/install ```"Add Python 3.6 to PATH"``` (from the first screen) and ```"pip"``` (from the "Customize installation" screen), no other features need to be installed
+1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.x (install the latest 3.x)
+  * enable/install ```"Add Python 3.x to PATH"``` (from the first screen) and ```"pip"``` (from the "Customize installation" screen), no other features need to be installed
 2. Install <a href="https://www.riverbankcomputing.com/software/pyqt/download5" target="_blank">PyQt5</a>
   * install via <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">Command Prompt</a> with the following command:
     * ```pip3 install PyQt5```
 3. Install <a href="https://pypi.python.org/pypi/pytz" target="_blank">pytz</a>
   * install via <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">Command Prompt</a> with the following command:
-    * ```easy_install --upgrade pytz```
+    * ```pip3 install pytz```
 4. Download and run the converter
   * scroll to the top of this webpage and download the converter (click on ```"Clone or download"``` then click ```"Download ZIP"```)
   * extract the folder within the zip file you downloaded to a new folder on your computer
@@ -41,8 +41,8 @@ Complete the following steps in order.
   * **you probably will want to make a shortcut to run the converter (see details below)**
 
 #### *Detailed Version*
-1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.6.x (install the latest 3.6.x)
-  * on the installer's first screen check/enable ```"Add Python 3.6 to PATH"```
+1. Install <a href="https://www.python.org/downloads/" target="_blank">Python</a>  3.x (install the latest 3.x)
+  * on the installer's first screen check/enable ```"Add Python 3.x to PATH"```
   * (optional) on the same screen you can click ```"Customize installation"``` and uncheck all features except for ```"pip"``` (pip is required for step 2)
   * click "Next" button until you see an "Install" button and then click the "Install" button (you do not need to check any more boxes)
   * when installation is complete you will have an option to "Disable path length limit", do not choose this option just click the "Close" button
@@ -59,7 +59,7 @@ Complete the following steps in order.
   * wait for installation to complete
 3. Install <a href="https://pypi.python.org/pypi/pytz" target="_blank">pytz</a>
   * <a href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/" target="_blank">open a Command Prompt</a> window
-  * type ```easy_install --upgrade pytz```
+  * type ```pip3 install pytz```
   * press Enter key
   * wait for installation to complete
 4. Download and run the converter
